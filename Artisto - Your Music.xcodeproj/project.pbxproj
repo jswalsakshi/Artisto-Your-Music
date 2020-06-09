@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		6C9F061D24902C3300790999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F061C24902C3300790999 /* AppDelegate.swift */; };
 		6C9F061F24902C3300790999 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F061E24902C3300790999 /* SceneDelegate.swift */; };
-		6C9F062124902C3300790999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F062024902C3300790999 /* ViewController.swift */; };
 		6C9F062424902C3300790999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9F062224902C3300790999 /* Main.storyboard */; };
 		6C9F062624902C3600790999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C9F062524902C3600790999 /* Assets.xcassets */; };
 		6C9F062924902C3600790999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9F062724902C3600790999 /* LaunchScreen.storyboard */; };
+		6C9F063124902E4A00790999 /* SongListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F063024902E4A00790999 /* SongListController.swift */; };
+		6C9F06362490322400790999 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F06342490322400790999 /* SongTableViewCell.swift */; };
+		6C9F06372490322400790999 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9F06352490322400790999 /* SongTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6C9F061924902C3300790999 /* Artisto - Your Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Artisto - Your Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9F061C24902C3300790999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C9F061E24902C3300790999 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6C9F062024902C3300790999 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6C9F062324902C3300790999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C9F062524902C3600790999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C9F062824902C3600790999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C9F062A24902C3600790999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C9F063024902E4A00790999 /* SongListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListController.swift; sourceTree = "<group>"; };
+		6C9F06342490322400790999 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		6C9F06352490322400790999 /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		6C9F061B24902C3300790999 /* Artisto - Your Music */ = {
 			isa = PBXGroup;
 			children = (
+				6C9F0632249031EE00790999 /* View */,
 				6C9F061C24902C3300790999 /* AppDelegate.swift */,
 				6C9F061E24902C3300790999 /* SceneDelegate.swift */,
-				6C9F062024902C3300790999 /* ViewController.swift */,
+				6C9F063024902E4A00790999 /* SongListController.swift */,
 				6C9F062224902C3300790999 /* Main.storyboard */,
 				6C9F062524902C3600790999 /* Assets.xcassets */,
 				6C9F062724902C3600790999 /* LaunchScreen.storyboard */,
 				6C9F062A24902C3600790999 /* Info.plist */,
 			);
 			path = "Artisto - Your Music";
+			sourceTree = "<group>";
+		};
+		6C9F0632249031EE00790999 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C9F0633249031FA00790999 /* TableCells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C9F0633249031FA00790999 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				6C9F06342490322400790999 /* SongTableViewCell.swift */,
+				6C9F06352490322400790999 /* SongTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9F06372490322400790999 /* SongTableViewCell.xib in Resources */,
 				6C9F062924902C3600790999 /* LaunchScreen.storyboard in Resources */,
 				6C9F062624902C3600790999 /* Assets.xcassets in Resources */,
 				6C9F062424902C3300790999 /* Main.storyboard in Resources */,
@@ -138,7 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C9F062124902C3300790999 /* ViewController.swift in Sources */,
+				6C9F06362490322400790999 /* SongTableViewCell.swift in Sources */,
+				6C9F063124902E4A00790999 /* SongListController.swift in Sources */,
 				6C9F061D24902C3300790999 /* AppDelegate.swift in Sources */,
 				6C9F061F24902C3300790999 /* SceneDelegate.swift in Sources */,
 			);
@@ -291,7 +315,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jswal-sakshi.Artisto---Your-Music";
+				PRODUCT_BUNDLE_IDENTIFIER = "jswal-sakshi.Artisto-Your-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jswal-sakshi.Artisto---Your-Music";
+				PRODUCT_BUNDLE_IDENTIFIER = "jswal-sakshi.Artisto-Your-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
