@@ -10,12 +10,18 @@ import UIKit
 
 class ArtistSearchListController: UIViewController {
     @IBOutlet weak var table_songList: UITableView!
+    @IBOutlet weak var constraint_headerViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var constraint_searchViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var textField_search: UITextField!
+    @IBOutlet weak var btn_search: UIButton!
     
     var results = [Result] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForCellNib()
+    }
+    @IBAction func actionSearchBtnPressed(_ sender: Any) {
     }
 }
 

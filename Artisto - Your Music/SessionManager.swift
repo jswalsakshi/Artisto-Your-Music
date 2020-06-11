@@ -12,7 +12,11 @@ class SessionManager: NSObject {
 
     static let sharedInstance = SessionManager()
     
-    func getServerData(searchArtist: String) {
+    func getServerData(ViewController viewController: UIViewController,
+                       searchArtist: String,
+                       completionHandler: @escaping
+        (_ success: Bool,_ error: Error?, _ response:AnyObject?, _ data: Data?) -> Void) {
+        
         guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else {
                    print("Invalid URL")
                    return

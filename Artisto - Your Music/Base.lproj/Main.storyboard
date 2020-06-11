@@ -16,21 +16,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-ZI-lew">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-gi-OWu">
+                                        <rect key="frame" x="157.5" y="60.5" width="99" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Iov-5z-09m"/>
+                                    <constraint firstAttribute="height" constant="160" id="Iov-5z-09m"/>
+                                    <constraint firstItem="RTQ-gi-OWu" firstAttribute="centerY" secondItem="cuy-ZI-lew" secondAttribute="centerY" id="haM-wO-R1Z"/>
+                                    <constraint firstItem="RTQ-gi-OWu" firstAttribute="centerX" secondItem="cuy-ZI-lew" secondAttribute="centerX" id="w0k-xb-zPM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcS-Fc-WGR">
-                                <rect key="frame" x="0.0" y="60" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Artist Here.." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-jF-Lpj">
+                                        <rect key="frame" x="41" y="13" width="332" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="UKV-jF-Lpj" firstAttribute="centerX" secondItem="NcS-Fc-WGR" secondAttribute="centerX" id="A6X-Z6-Mac"/>
                                     <constraint firstAttribute="height" constant="60" id="E2C-ny-B9h"/>
+                                    <constraint firstItem="UKV-jF-Lpj" firstAttribute="centerY" secondItem="NcS-Fc-WGR" secondAttribute="centerY" id="M2s-TC-Wmp"/>
+                                    <constraint firstItem="UKV-jF-Lpj" firstAttribute="top" secondItem="NcS-Fc-WGR" secondAttribute="top" constant="13" id="Vjm-m2-0dc"/>
+                                    <constraint firstItem="UKV-jF-Lpj" firstAttribute="leading" secondItem="NcS-Fc-WGR" secondAttribute="leading" constant="41" id="oFX-6D-hUt"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-mx-cjj">
-                                <rect key="frame" x="0.0" y="120" width="414" height="742"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="642"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-kB-Mz7">
@@ -41,6 +62,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="actionSearchBtnPressed:" destination="hPc-fY-RMX" eventType="touchUpInside" id="cfk-b4-Oba"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -61,7 +85,11 @@
                         <viewLayoutGuide key="safeArea" id="u47-jv-4Fm"/>
                     </view>
                     <connections>
+                        <outlet property="btn_search" destination="AWF-kB-Mz7" id="LTw-T5-ugx"/>
+                        <outlet property="constraint_headerViewHeight" destination="Iov-5z-09m" id="ncN-hP-onc"/>
+                        <outlet property="constraint_searchViewHeight" destination="E2C-ny-B9h" id="eeY-xl-n0a"/>
                         <outlet property="table_songList" destination="Zu3-mx-cjj" id="yei-oZ-d2i"/>
+                        <outlet property="textField_search" destination="UKV-jF-Lpj" id="rYb-Lt-krd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82R-4K-ELk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
