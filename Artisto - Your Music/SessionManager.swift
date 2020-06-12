@@ -17,7 +17,7 @@ class SessionManager: NSObject {
                        completionHandler: @escaping
         (_ success: Bool,_ error: Error?, _ response: Response?, _ data: Data?) -> Void) {
         
-        guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchArtist)") else {
                    print("Invalid URL")
                    return
                }

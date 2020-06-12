@@ -10,6 +10,7 @@ import UIKit
 
 class SongTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var view_container: UIView!
     @IBOutlet weak var img_artwork: UIImageView!
     @IBOutlet weak var lbl_trackTitle: UILabel!
     @IBOutlet weak var lbl_artist: UILabel!
@@ -27,7 +28,9 @@ class SongTableViewCell: UITableViewCell {
     }
     
     private func setUpUI(songData: Result) {
-        self.img_artwork.downloaded(from: songData.artworkUrl30!)
+        self.view_container.setBorderWidth(1, withColor: .gray, CornerRadius: 30)
+        self.img_artwork.makeCircular()
+        self.img_artwork.downloaded(from: songData.artworkUrl100!)
         self.lbl_trackTitle.text = songData.trackName
         self.lbl_artistName.text = songData.artistName
         self.lbl_genreName.text = songData.primaryGenreName

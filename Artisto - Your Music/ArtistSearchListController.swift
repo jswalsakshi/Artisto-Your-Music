@@ -62,7 +62,7 @@ extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource
 
 extension ArtistSearchListController {
     func callAPIforSongList() {
-        SessionManager.sharedInstance.getServerData(ViewController: self, searchArtist: "sanam") { (true, error, response, data) in
+        SessionManager.sharedInstance.getServerData(ViewController: self, searchArtist: self.textField_search.text ?? "") { (true, error, response, data) in
             let listData = response?.results
             listData?.forEach({ (order) in
                 self.results.append(order)

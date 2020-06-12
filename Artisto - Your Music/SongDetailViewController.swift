@@ -26,6 +26,14 @@ class SongDetailViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.view_detailSubView.setBorderWidth(5, withColor: .black, CornerRadius: 20)
+        self.lbl_title.text = self.songDetailData?.trackName
+        self.lbl_artistName.text = self.songDetailData?.artistName
+       // self.lbl_genre.text = self.songDetailData?.primaryGenreName
+        self.img_artwork.downloaded(from: songDetailData?.artworkUrl100 ?? "")
+        self.view_detailSubView.setBorderWidth(1, withColor: .clear, CornerRadius: 40)
+        self.img_artwork.setBorderWidth(1, withColor: .clear, CornerRadius: 40)
+    }
+    @IBAction func actionBackBtnPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
