@@ -35,18 +35,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcS-Fc-WGR">
                                 <rect key="frame" x="0.0" y="160" width="414" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Artist Here.." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-jF-Lpj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Artist Here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-jF-Lpj">
                                         <rect key="frame" x="41" y="13" width="332" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-da-WWA">
+                                        <rect key="frame" x="334" y="18" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="sSJ-da-WWA" secondAttribute="height" id="fWy-kl-fDz"/>
+                                            <constraint firstAttribute="height" constant="24" id="fwh-g2-aNV"/>
+                                        </constraints>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="actIonSearchBtnPressed:" destination="hPc-fY-RMX" eventType="touchUpInside" id="lwb-OF-tJv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="sSJ-da-WWA" firstAttribute="top" secondItem="UKV-jF-Lpj" secondAttribute="top" constant="5" id="2VL-JX-OYJ"/>
                                     <constraint firstItem="UKV-jF-Lpj" firstAttribute="centerX" secondItem="NcS-Fc-WGR" secondAttribute="centerX" id="A6X-Z6-Mac"/>
                                     <constraint firstAttribute="height" constant="60" id="E2C-ny-B9h"/>
+                                    <constraint firstItem="UKV-jF-Lpj" firstAttribute="trailing" secondItem="sSJ-da-WWA" secondAttribute="trailing" constant="15" id="JRX-zj-hxS"/>
                                     <constraint firstItem="UKV-jF-Lpj" firstAttribute="centerY" secondItem="NcS-Fc-WGR" secondAttribute="centerY" id="M2s-TC-Wmp"/>
                                     <constraint firstItem="UKV-jF-Lpj" firstAttribute="top" secondItem="NcS-Fc-WGR" secondAttribute="top" constant="13" id="Vjm-m2-0dc"/>
+                                    <constraint firstItem="UKV-jF-Lpj" firstAttribute="bottom" secondItem="sSJ-da-WWA" secondAttribute="bottom" constant="5" id="dOc-qq-q67"/>
                                     <constraint firstItem="UKV-jF-Lpj" firstAttribute="leading" secondItem="NcS-Fc-WGR" secondAttribute="leading" constant="41" id="oFX-6D-hUt"/>
                                 </constraints>
                             </view>
@@ -215,5 +229,6 @@
     </scenes>
     <resources>
         <image name="back_navigation" width="13" height="13"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="60"/>
     </resources>
 </document>

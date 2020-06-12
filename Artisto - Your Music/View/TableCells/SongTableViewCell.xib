@@ -56,6 +56,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s0-6Z-PcO">
+                                <rect key="frame" x="294" y="98" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -72,6 +78,7 @@
                             <constraint firstItem="HJK-f1-PzY" firstAttribute="leading" secondItem="3Dl-HK-u4d" secondAttribute="leading" constant="12" id="h2k-FS-YcI"/>
                             <constraint firstItem="eCP-Nm-1ZD" firstAttribute="leading" secondItem="44N-fw-Adz" secondAttribute="trailing" constant="23" id="jhd-ur-gYu"/>
                             <constraint firstItem="hwT-23-07p" firstAttribute="centerY" secondItem="G8d-Wu-a6M" secondAttribute="centerY" id="mWy-iA-aAV"/>
+                            <constraint firstAttribute="trailing" secondItem="5s0-6Z-PcO" secondAttribute="trailing" constant="22" id="nLD-SR-RnM"/>
                             <constraint firstItem="hwT-23-07p" firstAttribute="leading" secondItem="3Dl-HK-u4d" secondAttribute="leading" constant="88" id="qO0-sN-T8b"/>
                             <constraint firstItem="eCP-Nm-1ZD" firstAttribute="centerY" secondItem="44N-fw-Adz" secondAttribute="centerY" id="uNT-qJ-KJ9"/>
                         </constraints>
@@ -81,6 +88,7 @@
                     <constraint firstItem="3Dl-HK-u4d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3c5-1f-UY8"/>
                     <constraint firstAttribute="bottom" secondItem="3Dl-HK-u4d" secondAttribute="bottom" constant="15" id="YRi-1q-Qaq"/>
                     <constraint firstItem="3Dl-HK-u4d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dSF-9o-nFv"/>
+                    <constraint firstAttribute="bottom" secondItem="5s0-6Z-PcO" secondAttribute="bottom" constant="20" id="l7l-SC-hub"/>
                     <constraint firstAttribute="trailing" secondItem="3Dl-HK-u4d" secondAttribute="trailing" id="uhx-UZ-z9e"/>
                 </constraints>
             </tableViewCellContentView>
@@ -91,6 +99,7 @@
                 <outlet property="lbl_artistName" destination="Wbl-kw-F3h" id="DDD-Xh-teB"/>
                 <outlet property="lbl_genre" destination="44N-fw-Adz" id="Ja0-Gc-Zkn"/>
                 <outlet property="lbl_genreName" destination="eCP-Nm-1ZD" id="Hey-JU-0bx"/>
+                <outlet property="lbl_songLength" destination="5s0-6Z-PcO" id="gAS-I5-HsY"/>
                 <outlet property="lbl_trackTitle" destination="hwT-23-07p" id="Nij-My-AA2"/>
                 <outlet property="view_container" destination="3Dl-HK-u4d" id="f9Y-Bj-omI"/>
             </connections>

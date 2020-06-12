@@ -25,6 +25,9 @@ class ArtistSearchListController: UIViewController {
     @IBAction func actionSearchBtnPressed(_ sender: Any) {
         self.callAPIforSongList()
     }
+    @IBAction func actIonSearchBtnPressed(_ sender: Any) {
+        self.callAPIforSongList()
+    }
 }
 
 extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource {

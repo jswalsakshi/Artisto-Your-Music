@@ -17,6 +17,7 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var lbl_artistName: UILabel!
     @IBOutlet weak var lbl_genre: UILabel!
     @IBOutlet weak var lbl_genreName: UILabel!
+    @IBOutlet weak var lbl_songLength: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,7 @@ class SongTableViewCell: UITableViewCell {
         self.lbl_trackTitle.text = songData.trackName
         self.lbl_artistName.text = songData.artistName
         self.lbl_genreName.text = songData.primaryGenreName
+       // self.lbl_songLength.text = Int(songData.trackTimeMillis)
     }
     
 }
