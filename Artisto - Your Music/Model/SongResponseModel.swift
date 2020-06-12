@@ -15,5 +15,6 @@ struct Response: Codable {
 struct Result: Codable {
     var trackId: Int?
     var trackName: String?
-    var collectionName: String?
+    var artistName: String?
+    var artworkUrl30: String?
 }

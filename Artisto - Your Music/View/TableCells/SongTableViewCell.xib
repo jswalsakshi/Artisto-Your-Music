@@ -58,7 +58,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-Mn-Xgd">
                                 <rect key="frame" x="20" y="138" width="318" height="1"/>
-                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ke8-hx-6bJ"/>
                                 </constraints>
@@ -95,7 +95,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="68.115942028985515" y="46.540178571428569"/>
+            <connections>
+                <outlet property="img_artwork" destination="G8d-Wu-a6M" id="KDM-Zj-zOw"/>
+                <outlet property="lbl_artist" destination="HJK-f1-PzY" id="T2q-zq-9sS"/>
+                <outlet property="lbl_artistName" destination="Wbl-kw-F3h" id="DDD-Xh-teB"/>
+                <outlet property="lbl_genre" destination="44N-fw-Adz" id="Ja0-Gc-Zkn"/>
+                <outlet property="lbl_genreName" destination="eCP-Nm-1ZD" id="Hey-JU-0bx"/>
+                <outlet property="lbl_trackTitle" destination="hwT-23-07p" id="Nij-My-AA2"/>
+            </connections>
+            <point key="canvasLocation" x="0.0" y="-28"/>
         </tableViewCell>
     </objects>
 </document>

@@ -15,13 +15,15 @@ class ArtistSearchListController: UIViewController {
     @IBOutlet weak var textField_search: UITextField!
     @IBOutlet weak var btn_search: UIButton!
     
-    var results = [Result] ()
+    var results: [Result] = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.btn_search.isHidden = false
         self.registerForCellNib()
     }
     @IBAction func actionSearchBtnPressed(_ sender: Any) {
+        self.callAPIforSongList()
     }
 }
 
@@ -32,11 +34,15 @@ extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        self.results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell", for: indexPath) as! SongTableViewCell
+        guard let dataObject = self.results[safe: indexPath.row] else {
+            return cell
+        }
+        cell.configCellData(songData: dataObject)
         return cell
     }
     
@@ -44,5 +50,21 @@ extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource
         return 150
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let songDetailvc = self.storyboard?.instantiateViewController(identifier: "SongDetailViewController") as! SongDetailViewController
+        self.navigationController?.pushViewController(songDetailvc, animated: true)
+    }
+}
+
+extension ArtistSearchListController {
+    func callAPIforSongList() {
+        SessionManager.sharedInstance.getServerData(ViewController: self, searchArtist: "sanam") { (true, error, response, data) in
+            let listData = response?.results
+            listData?.forEach({ (order) in
+                self.results.append(order)
+            })
+            self.btn_search.isHidden = true
+            self.table_songList.reloadData()
+        }
+    }
 }

@@ -15,7 +15,7 @@ class SessionManager: NSObject {
     func getServerData(ViewController viewController: UIViewController,
                        searchArtist: String,
                        completionHandler: @escaping
-        (_ success: Bool,_ error: Error?, _ response:AnyObject?, _ data: Data?) -> Void) {
+        (_ success: Bool,_ error: Error?, _ response: Response?, _ data: Data?) -> Void) {
         
         guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else {
                    print("Invalid URL")
@@ -30,6 +30,7 @@ class SessionManager: NSObject {
                        if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
                            // we have good data – go back to the main thread
                            DispatchQueue.main.async {
+                            completionHandler(true, error, decodedResponse, data)
                                // update our UI
 //                               self.results = decodedResponse.results!
 //                               print(self.results)
