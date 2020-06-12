@@ -128,13 +128,37 @@
                                                     <constraint firstAttribute="height" constant="194" id="SBJ-85-SHM"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALR-qj-Kui">
+                                                <rect key="frame" x="186" y="239.5" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-1n-xAJ">
+                                                <rect key="frame" x="248" y="295" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-Yj-ZB5">
+                                                <rect key="frame" x="150" y="295" width="52" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="QwA-kq-gxQ" secondAttribute="trailing" constant="54" id="3Ai-jK-3yU"/>
+                                            <constraint firstItem="ALR-qj-Kui" firstAttribute="centerX" secondItem="7CV-OB-Fpy" secondAttribute="centerX" id="4d7-LK-l8r"/>
+                                            <constraint firstItem="1kt-Yj-ZB5" firstAttribute="top" secondItem="ALR-qj-Kui" secondAttribute="bottom" constant="34.5" id="LUU-dM-isL"/>
                                             <constraint firstAttribute="height" constant="500" id="OO1-1l-lVT"/>
+                                            <constraint firstItem="1kt-Yj-ZB5" firstAttribute="leading" secondItem="7CV-OB-Fpy" secondAttribute="leading" constant="150" id="PcB-HJ-pkr"/>
+                                            <constraint firstItem="Ryv-1n-xAJ" firstAttribute="centerY" secondItem="1kt-Yj-ZB5" secondAttribute="centerY" id="Qan-l5-yB7"/>
+                                            <constraint firstItem="ALR-qj-Kui" firstAttribute="centerY" secondItem="7CV-OB-Fpy" secondAttribute="centerY" id="XbC-cT-Og7"/>
                                             <constraint firstItem="QwA-kq-gxQ" firstAttribute="leading" secondItem="7CV-OB-Fpy" secondAttribute="leading" constant="47" id="jXv-FM-eFI"/>
                                             <constraint firstItem="QwA-kq-gxQ" firstAttribute="top" secondItem="7CV-OB-Fpy" secondAttribute="top" constant="31" id="n3C-ru-s2f"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ryv-1n-xAJ" secondAttribute="trailing" constant="124" id="rO9-4T-OUd"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJu-XP-49U">
@@ -145,6 +169,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="cJu-XP-49U" firstAttribute="centerY" secondItem="e8s-Wk-Mc5" secondAttribute="centerY" id="Hhw-pt-Khe"/>
+                                    <constraint firstItem="e8s-Wk-Mc5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cJu-XP-49U" secondAttribute="trailing" constant="8" symbolic="YES" id="J4L-mj-y8Z"/>
                                     <constraint firstItem="cJu-XP-49U" firstAttribute="leading" secondItem="jog-JY-Otz" secondAttribute="leading" constant="34" id="KBH-R2-vGx"/>
                                     <constraint firstItem="e8s-Wk-Mc5" firstAttribute="centerX" secondItem="jog-JY-Otz" secondAttribute="centerX" id="OoJ-If-Iij"/>
                                     <constraint firstItem="7CV-OB-Fpy" firstAttribute="centerX" secondItem="jog-JY-Otz" secondAttribute="centerX" id="SQg-E6-w6Q"/>
@@ -164,6 +189,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Dm-Ap-bO2"/>
                     </view>
+                    <connections>
+                        <outlet property="img_artwork" destination="QwA-kq-gxQ" id="aE8-kP-BBC"/>
+                        <outlet property="lbl_artistName" destination="ALR-qj-Kui" id="xgd-Ma-Uhl"/>
+                        <outlet property="lbl_genre" destination="1kt-Yj-ZB5" id="kWH-nO-jN2"/>
+                        <outlet property="lbl_genreName" destination="Ryv-1n-xAJ" id="YCe-am-LxL"/>
+                        <outlet property="lbl_title" destination="e8s-Wk-Mc5" id="8ar-Li-0Rk"/>
+                        <outlet property="view_container" destination="jog-JY-Otz" id="kuL-ld-N3Q"/>
+                        <outlet property="view_detailSubView" destination="7CV-OB-Fpy" id="k5b-Jn-FLZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJT-Il-jcm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

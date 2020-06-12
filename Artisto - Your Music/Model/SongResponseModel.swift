@@ -17,4 +17,5 @@ struct Result: Codable {
     var trackName: String?
     var artistName: String?
     var artworkUrl30: String?
+    var primaryGenreName: String?
 }

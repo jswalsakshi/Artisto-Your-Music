@@ -52,6 +52,10 @@ extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let songDetailvc = self.storyboard?.instantiateViewController(identifier: "SongDetailViewController") as! SongDetailViewController
+        guard let dataObject = self.results[safe: indexPath.row] else {
+            return
+        }
+        songDetailvc.songDetailData = dataObject
         self.navigationController?.pushViewController(songDetailvc, animated: true)
     }
 }

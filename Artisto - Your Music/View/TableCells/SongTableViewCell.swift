@@ -9,6 +9,7 @@
 import UIKit
 
 class SongTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var img_artwork: UIImageView!
     @IBOutlet weak var lbl_trackTitle: UILabel!
     @IBOutlet weak var lbl_artist: UILabel!
@@ -29,7 +30,7 @@ class SongTableViewCell: UITableViewCell {
         self.img_artwork.downloaded(from: songData.artworkUrl30!)
         self.lbl_trackTitle.text = songData.trackName
         self.lbl_artistName.text = songData.artistName
-        self.lbl_genreName.text = songData.trackName
+        self.lbl_genreName.text = songData.primaryGenreName
     }
     
 }
