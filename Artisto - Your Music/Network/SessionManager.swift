@@ -9,7 +9,7 @@
 import UIKit
 
 class SessionManager: NSObject {
-
+    
     static let sharedInstance = SessionManager()
     
     func getServerData(ViewController viewController: UIViewController,
@@ -18,21 +18,21 @@ class SessionManager: NSObject {
         (_ success: Bool,_ error: Error?, _ response: Response?, _ data: Data?) -> Void) {
         
         guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchArtist)&attribute=artistTerm") else {
-                   print("Invalid URL")
-                   return
-               }
-               let request = URLRequest(url: url)
-               URLSession.shared.dataTask(with: request) { data, response, error in
-                   if let data = data {
-                       if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
-                           DispatchQueue.main.async {
-                            completionHandler(true, error, decodedResponse, data)
-                            
-                           }
-                           return
-                       }
-                   }
-                   print("Failed to load Data: \(error?.localizedDescription ?? "Unknown error")")
-               }.resume()
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
+                    DispatchQueue.main.async {
+                        completionHandler(true, error, decodedResponse, data)
+                        
+                    }
+                    return
+                }
+            }
+            print("Failed to load Data: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
     }
 }
