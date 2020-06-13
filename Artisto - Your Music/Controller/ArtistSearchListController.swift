@@ -30,9 +30,11 @@ class ArtistSearchListController: UIViewController {
     
     
     @IBAction func actionSearchBtnPressed(_ sender: Any) {
+        self.dismissKeyboard()
         self.callAPIforSongList()
     }
     @IBAction func actIonSearchBtnPressed(_ sender: Any) {
+        self.dismissKeyboard()
         self.callAPIforSongList()
     }
 }
@@ -69,7 +71,7 @@ extension TableViewHandler: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 145
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -85,9 +87,7 @@ extension TableViewHandler: UITableViewDelegate, UITableViewDataSource {
 private typealias APIHandler = ArtistSearchListController
 extension APIHandler {
     func callAPIforSongList() {
-        let artistNameWOSpace = self.textField_search.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let artistName = artistNameWOSpace?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-            print("enter artist name")
+        guard let artistName = self.textField_search.text, !artistName.isEmpty else {
             return self.showToast(message: "Please Enter Artist Name", font: .systemFont(ofSize: 12.0))
         }
         SessionManager.sharedInstance.getServerData(ViewController: self, searchArtist: artistName) { (true, error, response, data) in

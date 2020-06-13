@@ -27,4 +27,8 @@ func showToast(message : String, font: UIFont) {
     }, completion: {(isCompleted) in
         toastLabel.removeFromSuperview()
     })
-} }
+}
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+}

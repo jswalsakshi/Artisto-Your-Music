@@ -72,6 +72,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6C8F52F22494CDEE00741B5F /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				6C9F062224902C3300790999 /* Main.storyboard */,
+				6C9F062724902C3600790999 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		6C8F52F32494CE4800741B5F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6CA11FD32492107C007CC9F0 /* SessionManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		6C9F061024902C3300790999 = {
 			isa = PBXGroup;
 			children = (
@@ -94,13 +111,12 @@
 				6CA11FCE2491017E007CC9F0 /* Model */,
 				6C9F0632249031EE00790999 /* View */,
 				6C8F52F02494CAE400741B5F /* Controller */,
+				6C8F52F22494CDEE00741B5F /* StoryBoard */,
+				6C8F52F32494CE4800741B5F /* Network */,
 				6C8F52F12494CB1B00741B5F /* Resources */,
 				6CFFCABB2493D465004BD590 /* Extension */,
 				6C9F061C24902C3300790999 /* AppDelegate.swift */,
-				6CA11FD32492107C007CC9F0 /* SessionManager.swift */,
 				6C9F061E24902C3300790999 /* SceneDelegate.swift */,
-				6C9F062224902C3300790999 /* Main.storyboard */,
-				6C9F062724902C3600790999 /* LaunchScreen.storyboard */,
 				6C9F062A24902C3600790999 /* Info.plist */,
 			);
 			path = "Artisto - Your Music";
