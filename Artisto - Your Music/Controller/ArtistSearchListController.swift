@@ -19,9 +19,16 @@ class ArtistSearchListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.btn_search.isHidden = false
+        self.setupUI()
+        self.hideUnhideSearchBtn()
         self.registerForCellNib()
     }
+    
+    private func setupUI() {
+        self.btn_search.setBorderWidth(1, withColor: .clear, CornerRadius: 5)
+    }
+    
+    
     @IBAction func actionSearchBtnPressed(_ sender: Any) {
         self.callAPIforSongList()
     }
@@ -30,7 +37,19 @@ class ArtistSearchListController: UIViewController {
     }
 }
 
-extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource {
+private typealias SearchBtnHandler = ArtistSearchListController
+extension SearchBtnHandler {
+    private func hideUnhideSearchBtn() {
+        if self.results.count > 0 {
+            self.btn_search.isHidden = true
+        } else {
+            self.btn_search.isHidden = false
+        }
+    }
+}
+
+private typealias TableViewHandler = ArtistSearchListController
+extension TableViewHandler: UITableViewDelegate, UITableViewDataSource {
     
     private func registerForCellNib() {
         self.table_songList.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
@@ -63,14 +82,21 @@ extension ArtistSearchListController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
-extension ArtistSearchListController {
+private typealias APIHandler = ArtistSearchListController
+extension APIHandler {
     func callAPIforSongList() {
-        SessionManager.sharedInstance.getServerData(ViewController: self, searchArtist: self.textField_search.text ?? "") { (true, error, response, data) in
+        let artistNameWOSpace = self.textField_search.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let artistName = artistNameWOSpace?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            print("enter artist name")
+            return self.showToast(message: "Please Enter Artist Name", font: .systemFont(ofSize: 12.0))
+        }
+        SessionManager.sharedInstance.getServerData(ViewController: self, searchArtist: artistName) { (true, error, response, data) in
+            self.results.removeAll()
             let listData = response?.results
             listData?.forEach({ (order) in
                 self.results.append(order)
             })
-            self.btn_search.isHidden = true
+            self.hideUnhideSearchBtn()
             self.table_songList.reloadData()
         }
     }

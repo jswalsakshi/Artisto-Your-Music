@@ -19,4 +19,6 @@ struct Result: Codable {
     var artworkUrl100: String?
     var primaryGenreName: String?
     var trackTimeMillis: Int?
+    var trackPrice: Double?
+    var releaseDate: String?
 }

@@ -15,8 +15,8 @@ class SongDetailViewController: UIViewController {
     @IBOutlet weak var view_detailSubView: UIView!
     @IBOutlet weak var img_artwork: UIImageView!
     @IBOutlet weak var lbl_artistName: UILabel!
-    @IBOutlet weak var lbl_genre: UILabel!
-    @IBOutlet weak var lbl_genreName: UILabel!
+    @IBOutlet weak var lbl_trackPrice: UILabel!
+    @IBOutlet weak var lbl_releaseDate: UILabel!
     
     var songDetailData: Result?
     
@@ -28,7 +28,8 @@ class SongDetailViewController: UIViewController {
     private func setupUI() {
         self.lbl_title.text = self.songDetailData?.trackName
         self.lbl_artistName.text = self.songDetailData?.artistName
-       // self.lbl_genre.text = self.songDetailData?.primaryGenreName
+        self.lbl_trackPrice.text = ("$ \(self.songDetailData?.trackPrice ?? 0)")
+        self.lbl_releaseDate.text = self.songDetailData?.releaseDate
         self.img_artwork.downloaded(from: songDetailData?.artworkUrl100 ?? "")
         self.view_detailSubView.setBorderWidth(1, withColor: .clear, CornerRadius: 40)
         self.img_artwork.setBorderWidth(1, withColor: .clear, CornerRadius: 40)
